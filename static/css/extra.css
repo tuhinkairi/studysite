@@ -1,0 +1,10 @@
+.bg-imgset{
+    background-image: url('/static/img/landbg.jpg');
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+@media (max-width:650px) {
+    .bg-imgset{
+        background-position-x: 50% ;
+    }
+}

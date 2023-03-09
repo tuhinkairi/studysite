@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="static/css/style.css">
+    <link rel="stylesheet" href="static/css/extra.css">
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+</head>
+
+<body class="overflow-x-hidden text-gray-900">
+
+    <header class="shadow-md relative z-50">
+        <section class="hidden md:block">
+
+            <nav class="nav pl-5 bg-gray-800 shadow-lg shadow-black flex justify-between items-center">
+                <ul class="flex justify-center md:justify-start items-center ">
+                    <li><a class=" text-md font-bold  inline-block  hover:text-cyan-400 hover:bg-gray-900  text-white capitalize px-4 md:px-6 py-4  "
+                            href="home.html">Home</a></li>
+                    <li><a class=" text-md font-bold  inline-block  hover:text-cyan-400 hover:bg-gray-900  text-white capitalize px-4 md:px-6 py-4  "
+                            href="courses.html">Courses</a></li>
+                    <li><a class=" text-md font-bold  inline-block  hover:text-cyan-400 hover:bg-gray-900  text-white capitalize px-4 md:px-6 py-4  "
+                            href="blogs.html">blogs</a></li>
+                    <li><a class=" text-md font-bold  inline-block  hover:text-cyan-400 hover:bg-gray-900  text-white capitalize px-4 md:px-6 py-4  "
+                            href="about.html">about</a></li>
+                    <li><a class=" text-md font-bold  inline-block  hover:text-cyan-400 hover:bg-gray-900  text-white capitalize px-4 md:px-6 py-4  "
+                            href="about.html">contact us</a></li>
+
+                </ul>
+                <div class="btns flex  text-gray-200 w-fit">
+                    <button
+                        class="capitalize text-md px-3 py-1 mr-5 border-2 hover:text-cyan-400 hover:border-cyan-400 border-gray-200 rounded-lg font-semibold">login</button>
+                </div>
+            </nav>
+            <nav class="nav2 pl-5 flex justify-center items-center bg-gray-100">
+                <ul class="flex justify-center md:justify-start items-center py-1">
+                    <li><a class=" font-bold  inline-block  hover:text-cyan-400 hover:bg-gray-800   capitalize px-4 py-3  rounded-lg "
+                            href="home.html">Python</a></li>
+                    <li><a class=" font-bold  inline-block  hover:text-cyan-400 hover:bg-gray-800   capitalize px-4 py-3  rounded-lg "
+                            href="courses.html">Java</a></li>
+                    <li><a class=" font-bold  inline-block  hover:text-cyan-400 hover:bg-gray-800   capitalize px-4 py-3  rounded-lg "
+                            href="blogs.html">HTML</a></li>
+                    <li><a class=" font-bold  inline-block  hover:text-cyan-400 hover:bg-gray-800   capitalize px-4 py-3  rounded-lg "
+                            href="about.html">JS</a></li>
+                    <li><a class=" font-bold  inline-block  hover:text-cyan-400 hover:bg-gray-800   capitalize px-4 py-3  rounded-lg "
+                            href="about.html">PHP</a></li>
+                    <li><a class=" font-bold  inline-block  hover:text-cyan-400 hover:bg-gray-800   capitalize px-4 py-3  rounded-lg "
+                            href="about.html">MongoDB</a></li>
+                </ul>
+            </nav>
+        </section>
+
+        <nav class="md:hidden relative z-20 w-full shadow-md">
+            <!-- todo -> add a logo -->
+            <div class="webname bg-gray-800">
+                <h1 class=" text-2xl font-semiblod  text-center py-4 font-bold text-cyan-400 shadow-md"> The
+                    E-Commerse
+                </h1>
+            </div>
+            <section class="flex py-5 justify-between items-center px-1 bg-gray-900">
+                <!-- btn for short menu -->
+                <button id="minimenu-btn" class="menu flex list-none ml-2 mr-2 w-fit flex-col space-y-1">
+                    <li class="w-7 py-[2px] rounded-lg bg-cyan-400"></li>
+                    <li class="w-7 py-[2px] rounded-lg bg-cyan-400"></li>
+                    <li class="w-7 py-[2px] rounded-lg bg-cyan-400"></li>
+                </button>
+
+
+                <form class=" flex justify-center items-center mr-[-.75rem]">
+                    <input type="search"
+                        class="py-1 px-1 rounded-lg pr-7 border-2 w-48 sm:w-72 border-gray-200 outline-none"
+                        placeholder="search">
+                    <button type="submit"
+                        class="w-fit flex justify-center items-center relative right-8 z-[1] opacity-50">
+                        <span class="material-symbols-outlined">search</span>
+                    </button>
+                </form>
+                <div class="w-fit text-sm flex ">
+
+
+
+                    <button class="w-fit flex justify-center items-center mr-2 z-[1] "><span
+                            class="material-symbols-outlined ">
+                        </span>
+                    </button>
+                    <input
+                        class="capitalize cursor-pointer text-md px-3 py-1 mr-5 border-2 hover:text-cyan-400 hover:border-cyan-400 border-gray-200 rounded-lg font-semibold text-gray-200"
+                        type="button" value="Login">
+                </div>
+            </section>
+        </nav>
+        <!-- short menu -->
+        <div id="mini-menu" class=" md:hidden h-0" style="transform:translateY(-320px);">
+            <!-- absolute left-0 top-24 z-[10] -->
+            <ul class="bg-gray-200 font-semibold list-none w-screen text-">
+                <li><a class="inline-block py-2 text-center w-full hover:bg-gray-800 font-semiblod hover:text-cyan-400 text-gray-900 capitalize"
+                        href="index.html">home </a></li>
+                <li><a class="inline-block py-2 text-center w-full hover:bg-gray-800 font-semiblod hover:text-cyan-400 text-gray-900 capitalize"
+                        href="catagorys.html">courses</a></li>
+                <details
+                    class="inline-block py-2 text-center w-full hover:bg-gray-800 font-semiblod hover:text-cyan-400 text-gray-900 capitalize">
+                    <summary>tutorial</summary>
+                    <ul class="bg-gray-800 w-screen font-semibold text-sm">
+
+                        <li class=" cursor-pointer py-1 text-gray-200 hover:text-cyan-400"><a class=""
+                                href="note.html"></a>HTML</li>
+                        <li class=" cursor-pointer py-1 text-gray-200 hover:text-cyan-400"><a class=""
+                                href="note.html"></a>css</li>
+                        <li class=" cursor-pointer py-1 text-gray-200 hover:text-cyan-400"><a class=""
+                                href="note.html"></a>js</li>
+                        <li class=" cursor-pointer py-1 text-gray-200 hover:text-cyan-400"><a class=""
+                                href="note.html"></a>c</li>
+                        <li class=" cursor-pointer py-1 text-gray-200 hover:text-cyan-400"><a class=""
+                                href="note.html"></a>C++</li>
+                        <li class=" cursor-pointer py-1 text-gray-200 hover:text-cyan-400"><a class=""
+                                href="note.html"></a>java</li>
+                        <li class=" cursor-pointer py-1 text-gray-200 hover:text-cyan-400"><a class=""
+                                href="note.html"></a>python</li>
+                        <li class=" cursor-pointer py-1 text-gray-200 hover:text-cyan-400"><a class=""
+                                href="note.html"></a>PHP</li>
+                        <li class=" cursor-pointer py-1 text-gray-200 hover:text-cyan-400"><a class=""
+                                href="note.html"></a>react</li>
+                    </ul>
+                </details>
+
+                <li><a class="inline-block py-2 text-center w-full hover:bg-gray-800 font-semiblod hover:text-cyan-400 text-gray-900 capitalize"
+                        href="sale.html">blogs</a></li>
+                <li><a class="inline-block py-2 text-center w-full hover:bg-gray-800 font-semiblod hover:text-cyan-400 text-gray-900 capitalize"
+                        href="Trending.html">trending </a></li>
+                <li><a class="inline-block py-2 text-center w-full hover:bg-gray-800 font-semiblod hover:text-cyan-400 text-gray-900 capitalize"
+                        href="about.html">about </a></li>
+                <li><a class="inline-block py-2 text-center w-full hover:bg-gray-800 font-semiblod hover:text-cyan-400 text-gray-900 capitalize"
+                        href="contact.html">contact </a></li>
+                <li><a class="inline-block py-2 text-center w-full hover:bg-gray-800 font-semiblod hover:text-cyan-400 text-gray-900 capitalize"
+                        href="user.html">account </a></li>
+            </ul>
+        </div>
+
+    </header>
+    <!-- mainbody -->
+    <main>
+        <!-- cources -->
+        <h2 class="text-xl md:text-3xl text-cyan-700 font-bold text-center capitalize my-10">Top Courses</h2>
+        <section class="text-gray-900 px-10 pb-10 space-y-10">
+            <div
+                class="cardsholder  flex m-auto items-center space-y-8 flex-col max-w-[26rem] md:space-y-0 md:max-w-full md:flex-row md:justify-evenly">
+
+                <div class="card border flex flex-col bg-gray-200 sm:mx-5 overflow-hidden rounded-xl shadow-xl">
+                    <div>
+                        <img class="box-border rounded-xl w-full" src="https://source.unsplash.com/random/720x400" alt="logo-banner">
+                    </div>
+                    <div class="p-4 pr-7">
+                            <h1 class="text-lg pb-3 font-bold">Lorem ipsum dolor sit amet.</h1>
+                            <p class="text-gray-700 ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui,
+                                aut. Quod illum
+                                voluptatum neque accusantium ratione pariatur ipsa vel maxime debitis, nihil magni
+                                voluptas distinctio,
+                                ullam ipsam consequatur repellat laborum.</p>
+                            <button
+                                class="bg-gray-800 capitalize font-semibold text-white px-2 py-2 mt-7 text-sm rounded-full hover:bg-gray-900 hover:text-cyan-400">start
+                                watching</button>
+                    </div>
+                </div>
+                <div class="card flex border flex-col sm:mx-5 bg-gray-200  overflow-hidden rounded-xl shadow-xl">
+                    <div>
+                        <img class="box-border rounded-xl w-full" src="https://source.unsplash.com/random/720x401" alt="logo-banner">
+                    </div>
+                    <div class="p-4 pr-7">
+                            <h1 class="text-lg pb-3 font-bold">Lorem ipsum dolor sit amet.</h1>
+                            <p class="text-gray-700">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui, aut.
+                                Quod illum
+                                voluptatum neque accusantium ratione pariatur ipsa vel maxime debitis, nihil magni
+                                voluptas distinctio,
+                                ullam ipsam consequatur repellat laborum.</p>
+                            <button
+                                class="bg-gray-800 capitalize font-semibold text-white px-2 py-2 mt-7 text-sm rounded-full hover:bg-gray-900 hover:text-cyan-400">start
+                                watching</button>
+                    </div>
+                </div>
+                <div class="card flex border flex-col sm:mx-5 bg-gray-200 overflow-hidden rounded-xl shadow-xl">
+                    <div>
+                        <img class="box-border rounded-xl w-full" src="https://source.unsplash.com/random/721x400" alt="logo-banner">
+                    </div>
+                    <div class="p-4 pr-7">
+                            <h1 class="text-lg pb-3 font-bold">Lorem ipsum dolor sit amet.</h1>
+                            <p class="text-gray-700">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui, aut.
+                                Quod illum
+                                voluptatum neque accusantium ratione pariatur ipsa vel maxime debitis, nihil magni
+                                voluptas distinctio,
+                                ullam ipsam consequatur repellat laborum.</p>
+                            <button
+                                class="bg-gray-800 capitalize font-semibold text-white px-2 py-2 mt-7 text-sm rounded-full hover:bg-gray-900 hover:text-cyan-400">start
+                                watching</button>
+                    </div>
+                </div>
+
+            </div>
+            <div
+                class="cardsholder  flex m-auto items-center space-y-8 flex-col max-w-[26rem] md:space-y-0 md:max-w-full md:flex-row md:justify-evenly">
+
+                <div class="card border flex flex-col bg-gray-200 sm:mx-5 overflow-hidden rounded-xl shadow-xl">
+                    <div>
+                        <img class="box-border rounded-xl w-full" src="https://source.unsplash.com/random/720x400" alt="logo-banner">
+                    </div>
+                    <div class="p-4 pr-7">
+                            <h1 class="text-lg pb-3 font-bold">Lorem ipsum dolor sit amet.</h1>
+                            <p class="text-gray-700 ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui,
+                                aut. Quod illum
+                                voluptatum neque accusantium ratione pariatur ipsa vel maxime debitis, nihil magni
+                                voluptas distinctio,
+                                ullam ipsam consequatur repellat laborum.</p>
+                            <button
+                                class="bg-gray-800 capitalize font-semibold text-white px-2 py-2 mt-7 text-sm rounded-full hover:bg-gray-900 hover:text-cyan-400">start
+                                watching</button>
+                    </div>
+                </div>
+                <div class="card flex border flex-col sm:mx-5 bg-gray-200  overflow-hidden rounded-xl shadow-xl">
+                    <div>
+                        <img class="box-border rounded-xl w-full" src="https://source.unsplash.com/random/720x401" alt="logo-banner">
+                    </div>
+                    <div class="p-4 pr-7">
+                            <h1 class="text-lg pb-3 font-bold">Lorem ipsum dolor sit amet.</h1>
+                            <p class="text-gray-700">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui, aut.
+                                Quod illum
+                                voluptatum neque accusantium ratione pariatur ipsa vel maxime debitis, nihil magni
+                                voluptas distinctio,
+                                ullam ipsam consequatur repellat laborum.</p>
+                            <button
+                                class="bg-gray-800 capitalize font-semibold text-white px-2 py-2 mt-7 text-sm rounded-full hover:bg-gray-900 hover:text-cyan-400">start
+                                watching</button>
+                    </div>
+                </div>
+                <div class="card flex border flex-col sm:mx-5 bg-gray-200 overflow-hidden rounded-xl shadow-xl">
+                    <div>
+                        <img class="box-border rounded-xl w-full" src="https://source.unsplash.com/random/721x400" alt="logo-banner">
+                    </div>
+                    <div class="p-4 pr-7">
+                            <h1 class="text-lg pb-3 font-bold">Lorem ipsum dolor sit amet.</h1>
+                            <p class="text-gray-700">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui, aut.
+                                Quod illum
+                                voluptatum neque accusantium ratione pariatur ipsa vel maxime debitis, nihil magni
+                                voluptas distinctio,
+                                ullam ipsam consequatur repellat laborum.</p>
+                            <button
+                                class="bg-gray-800 capitalize font-semibold text-white px-2 py-2 mt-7 text-sm rounded-full hover:bg-gray-900 hover:text-cyan-400">start
+                                watching</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+    </main>
+    <!-- footer -->
+    <footer class="text-gray-200  bg-gray-900 body-font ">
+        <div class="shadow-md shadow-black">
+
+            <div class="container px-5 py-12 mx-auto">
+                <div class="flex flex-wrap md:text-left text-center order-first">
+                    <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                        <h2 class="title-font font-bold text-cyan-400 tracking-widest text-sm mb-3">CATEGORIES</h2>
+                        <nav class="list-none mb-10">
+                            <li>
+                                <a class="text-gray-200 hover:text-cyan-400">First Link</a>
+                            </li>
+                            <li>
+                                <a class="text-gray-200 hover:text-cyan-400">Second Link</a>
+                            </li>
+                            <li>
+                                <a class="text-gray-200 hover:text-cyan-400">Third Link</a>
+                            </li>
+                            <li>
+                                <a class="text-gray-200 hover:text-cyan-400">Fourth Link</a>
+                            </li>
+                        </nav>
+                    </div>
+                    <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                        <h2 class="title-font font-bold text-cyan-400 tracking-widest text-sm mb-3">CATEGORIES</h2>
+                        <nav class="list-none mb-10">
+                            <li>
+                                <a class="text-gray-200 hover:text-cyan-400">First Link</a>
+                            </li>
+                            <li>
+                                <a class="text-gray-200 hover:text-cyan-400">Second Link</a>
+                            </li>
+                            <li>
+                                <a class="text-gray-200 hover:text-cyan-400">Third Link</a>
+                            </li>
+                            <li>
+                                <a class="text-gray-200 hover:text-cyan-400">Fourth Link</a>
+                            </li>
+                        </nav>
+                    </div>
+                    <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                        <h2 class="title-font font-bold text-cyan-400 tracking-widest text-sm mb-3">CATEGORIES</h2>
+                        <nav class="list-none mb-10">
+                            <li>
+                                <a class="text-gray-200 hover:text-cyan-400">First Link</a>
+                            </li>
+                            <li>
+                                <a class="text-gray-200 hover:text-cyan-400">Second Link</a>
+                            </li>
+                            <li>
+                                <a class="text-gray-200 hover:text-cyan-400">Third Link</a>
+                            </li>
+                            <li>
+                                <a class="text-gray-200 hover:text-cyan-400">Fourth Link</a>
+                            </li>
+                        </nav>
+                    </div>
+                    <div class="lg:w-1/4 md:w-1/2 w-full px-4">
+                        <h2 class="title-font font-bold text-cyan-400 tracking-widest text-sm mb-3">SUBSCRIBE</h2>
+                        <div
+                            class="flex xl:flex-nowrap md:flex-nowrap lg:flex-wrap flex-wrap justify-center items-end md:justify-start">
+                            <div class="relative w-40 sm:w-auto xl:mr-4 lg:mr-0 sm:mr-4 mr-2">
+
+                                <label for="footer-field" class="leading-7 text-sm text-gray-200">Placeholder</label>
+                                <input type="text" id="footer-field" name="footer-field"
+                                    class="w-full bg-opacity-50 rounded border border-gray-300 focus:bg-transparent focus:ring-2 focus:ring-indigo-200 focus:border-cyan-500 text-base outline-none text-gray-700 focus:text-gray-200 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out">
+                            </div>
+                            <button
+                                class="lg:mt-2 xl:mt-0 flex-shrink-0 inline-flex text-white bg-cyan-500 border-0 py-2 px-6 focus:outline-none hover:bg-cyan-600 rounded">Button</button>
+                        </div>
+                        <p class="text-gray-500 text-sm mt-2 md:text-left text-center">Bitters chicharrones fanny pack
+                            <br class="lg:block hidden">waistcoat green juice
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-gray-800  shadow-md shadow-black">
+                <div class="container px-5 py-6 mx-auto flex items-center sm:flex-row flex-col">
+                    <a class="flex title-font font-medium items-center md:justify-start justify-center text-gray-100">
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round"
+                            stroke-linejoin="round" stroke-width="2"
+                            class="w-10 h-10 text-white p-2 bg-cyan-500 rounded-full" viewBox="0 0 24 24">
+                            <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
+                        </svg>
+                        <span class="ml-3 text-xl text-gray-200">Tailblocks</span>
+                    </a>
+                    <p class="text-sm text-cyan-500 sm:ml-6 sm:mt-0 mt-4">© 2020 Tailblocks —
+                        <a href="https://twitter.com/knyttneve" rel="noopener noreferrer" class="text-gray-200 ml-1"
+                            target="_blank">@knyttneve</a>
+                    </p>
+                    <span class="inline-flex sm:ml-auto sm:mt-0 mt-4 justify-center sm:justify-start">
+                        <a class="text-cyan-500">
+                            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                class="w-5 h-5" viewBox="0 0 24 24">
+                                <path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"></path>
+                            </svg>
+                        </a>
+                        <a class="ml-3 text-cyan-500">
+                            <svg fill="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                class="w-5 h-5" viewBox="0 0 24 24">
+                                <path
+                                    d="M23 3a10.9 10.9 0 01-3.14 1.53 4.48 4.48 0 00-7.86 3v1A10.66 10.66 0 013 4s-4 9 5 13a11.64 11.64 0 01-7 2c9 5 20 0 20-11.5a4.5 4.5 0 00-.08-.83A7.72 7.72 0 0023 3z">
+                                </path>
+                            </svg>
+                        </a>
+                        <a class="ml-3 text-cyan-500">
+                            <svg fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
+                                stroke-width="2" class="w-5 h-5" viewBox="0 0 24 24">
+                                <rect width="20" height="20" x="2" y="2" rx="5" ry="5"></rect>
+                                <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37zm1.5-4.87h.01"></path>
+                            </svg>
+                        </a>
+                        <a class="ml-3 text-cyan-500">
+                            <svg fill="currentColor" stroke="currentColor" stroke-linecap="round"
+                                stroke-linejoin="round" stroke-width="0" class="w-5 h-5" viewBox="0 0 24 24">
+                                <path stroke="none"
+                                    d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6zM2 9h4v12H2z">
+                                </path>
+                                <circle cx="4" cy="4" r="2" stroke="none"></circle>
+                            </svg>
+                        </a>
+                    </span>
+                </div>
+            </div>
+            <script src="static/js/minimenu.js"></script>
+            <script src="static/js/slider.js"></script>
+    </footer>
+</body>
