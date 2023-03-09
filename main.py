@@ -3,7 +3,7 @@ from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import text
 from werkzeug.utils import secure_filename
-
+import base64
 
 # app
 app = Flask(__name__)
@@ -46,8 +46,12 @@ def courseshow():
     data = videos.query.all()
     
     # img decoding
-    
-    return render_template('courses.html',video = data)
+    img_list = []
+    for img in data:
+        imgdata = base64.b64encode(img.titleimg)
+        imgdata = imgdata.decode('UTF-8')
+        img_list.append(imgdata)
+    return render_template('courses.html',video = data,listimg = img_list)
 
 @app.route('/courses_video/<string:video_slug>', methods = ['POST'])
 def coursevideos(video_slug):

@@ -1,30 +1,32 @@
 {% extends 'layout.html' %}
 {% block body %}
-    <!-- mainbody -->
-    <main>
-        <!-- cources -->
-        <h2 class="text-xl md:text-3xl text-cyan-700 font-bold text-center capitalize my-10">Top Courses</h2>
-        <section class="text-gray-900 px-10 pb-10 space-y-10">
-            <div
-            class="cardsholder  flex m-auto items-center space-y-8 flex-col max-w-[26rem] md:space-y-0 md:max-w-full md:flex-row md:justify-evenly">
-            
+<!-- mainbody -->
+<main>
+    <!-- cources -->
+    <h2 class="text-xl md:text-3xl text-cyan-700 font-bold text-center capitalize my-10">Top Courses</h2>
+    <section class="text-gray-900  sm:px-10 pb-10 space-y-10">
+        <div
+            class="cardsholder flex-wrap flex m-auto justify-center items-center flex-col space-y-8 max-w-[26rem] md:space-y-0 md:max-w-full md:flex-row md:justify-evenly lg:justify-center">
+
             {% for post in video %}
-                <div class="card border flex flex-col bg-gray-200 sm:mx-5 overflow-hidden rounded-xl shadow-xl">
-                    <div>
-                        <img class="box-border rounded-xl w-full" src="{{ post.titleimg }}" alt="logo-banner">
-                    </div>
-                    <div class="p-4 pr-7">
-                            <h1 class="text-lg pb-3 font-bold">{{ post.sno }} : {{ post.title }}</h1>
-                            <h1 class="text-lg pb-3 font-bold">Date: {{ post.date }}</h1>
-                            <p class="text-gray-700 ">{{ post.discription }}</p>
-                            <button><a href="/courses_video/{{ post.slug }}"
-                                class="bg-gray-800 capitalize font-semibold text-white px-2 py-2 mt-7 text-sm rounded-full hover:bg-gray-900 hover:text-cyan-400">start
-                                watching</a></button>
-                    </div>
+            <div class="card border flex flex-col bg-gray-200 sm:mx-5 overflow-hidden rounded-xl shadow-xl"
+                style="width:370px">
+                <div>
+                    <img class="box-border rounded-xl " src="data:image/jpg;base64,{{ listimg[loop.index-1] }}"
+                        alt="logo-banner">
                 </div>
-                {% endfor %}
+                <div class="p-4 pr-7">
+                    <h1 class="text-lg pb-3 font-bold">{{ post.sno }} : {{ post.title }}</h1>
+                    <h1 class="text-lg pb-3 font-bold">Date: {{ post.date }}</h1>
+                    <p class="text-gray-700 pb-3">{{ post.discription }}</p>
+                    <button><a href="/courses_video/{{ post.slug }}"
+                            class="bg-gray-800 capitalize font-semibold text-white px-2 py-2 mt-7 text-sm rounded-full hover:bg-gray-900 hover:text-cyan-400">start
+                            watching</a></button>
+                </div>
             </div>
-        </section>
-    </main>
-    <!-- footer -->
-    {% endblock %}
+            {% endfor %}
+        </div>
+    </section>
+</main>
+<!-- footer -->
+{% endblock %}
