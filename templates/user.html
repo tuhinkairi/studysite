@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+{% block body %}
+    <main class=" py-4 shadow-md md:px-16">
+    <section class="shadow-md text-gray-700 mb-7 ">
+        <section class="py-5 space-y-5 px-5 ">
+
+            <div class="user_image border-2 rounded-full w-fit overflow-hidden ">
+                <img height="48" class="rounded-full" width="48" src="https://source.unsplash.com/random/48x48"
+                    alt="user img">
+            </div>
+            <section class="user_details text-lg text-semibold capitalize space-y-5 font-semibold">
+                <h1 ><span>Your Number :</span>1234567890</h1>
+                <h1 class="flex justify-between items-center"><span>tuhin kairi</span><span>something@gmail.com</span>
+                </h1>
+            </section>
+        </section>
+    </section>
+    <section>
+        <ul class="flex flex-col capitalize font-semibold space-y-1">
+            <li><a class="w-full border-2 hover:bg-gray-800 rounded-md flex items-center hover:text-cyan-400 py-2  px-5" href=""><span class="pr-2 material-symbols-outlined">
+                person
+                </span>account</a></li>
+            <li><a class="w-full border-2 hover:bg-gray-800 rounded-md flex items-center hover:text-cyan-400 py-2  px-5" href=""><span class="pr-2 material-symbols-outlined">
+                shopping_bag
+                </span>your Courses</a></li>
+            <li><a class="w-full border-2 hover:bg-gray-800 rounded-md flex items-center hover:text-cyan-400 py-2  px-5" href=""><span
+                class="pr-2 material-symbols-outlined " style="filter:invert(0)">
+                shopping_cart
+            </span>Buy Courses</a></li>
+            <li><a class="w-full border-2 hover:bg-gray-800 rounded-md flex items-center hover:text-cyan-400 py-2  px-5" href=""><span
+                class="pr-2 material-symbols-outlined">
+                favorite
+            </span>wish lists</a></li>
+            <li><a class="w-full border-2 hover:bg-gray-800 rounded-md flex items-center hover:text-cyan-400 py-2  px-5" href=""><span class="pr-2 material-symbols-outlined">
+                credit_card
+                </span>payment</a></li>
+            <li><a class="w-full border-2 hover:bg-gray-800 rounded-md flex items-center hover:text-cyan-400 py-2  px-5" href=""><span class="pr-2 material-symbols-outlined">
+                settings
+                </span>settings</a></li>
+            <li><a class="w-full border-2 hover:bg-gray-800 rounded-md flex items-center hover:text-cyan-400 py-2  px-5" href=""><span class="pr-2 material-symbols-outlined">
+                lock
+                </span>security</a></li>
+            <li><a class="w-full border-2 hover:bg-gray-800 rounded-md flex items-center hover:text-cyan-400 py-2  px-5" href=""><span class="pr-2 material-symbols-outlined">
+                prescriptions
+                </span>T&C</a></li>
+        </ul>
+
+        </section>
+    </main>
+    {% endblock %}

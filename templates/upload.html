@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>File Upload Form</title>
+    <link rel="stylesheet" href="{{url_for('static',filename = 'css/style.css') }}">
+  </head>
+  <body>
+    <h1>File Upload Form</h1>
+    <form class="" action="/upload" method="post" enctype="multipart/form-data">
+
+    <label for="file">video </label>
+    <input type="file" class="border" name="vid_file" id="file">
+
+    <label for="thumbnail">image</label>
+    <input type="file" class="border" name="thumbnail" id="thumbnail">
+
+    <label for="course_name">Course Name</label>
+    <input type="text" class="border" name="course_name" id="course_name">
+
+    <label for="dis">discription</label>
+    <input type="text" class="border" name="dis" id="dis">
+
+    <br>
+    <input type="submit" class="border" name="submit" value="Upload">
+    </form>
+  </body>
+</html>

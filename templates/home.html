@@ -1,0 +1,143 @@
+{% extends 'layout.html' %}
+{% block body %}
+
+    <main class="maincontent shadow-md">
+        <!-- slider -->
+        <!-- slider class="border rounded-lg" imgs https://source.unsplash.com/random/1440x800 -->
+        <div class="slider-full"></div>
+        <div
+            class="flex justify-between items-center opacity-[70%] w-[99%] m-auto relative top-[27vw] md:top-[20vw] px-5 h-0 z-[5]">
+            <button id="left">
+                <span class="p-2 rounded-full bg-cyan-400 material-symbols-outlined">arrow_back_ios_new</span>
+            </button>
+            <button id="right">
+                <span class="p-2 rounded-full bg-cyan-400 material-symbols-outlined">arrow_forward_ios</span>
+            </button>
+        </div>
+        <div id="slider" class=" flex w-auto relavent left-0 z-[2]">
+            <img class="slider-img hidden min-w-screen md:inline-block"
+                src="https://source.unsplash.com/random/1441x600" alt="slider-img-2">
+            <img class="slider-img hidden min-w-screen md:inline-block"
+                src="https://source.unsplash.com/random/1440x602" alt="slider-img-1">
+            <img class="slider-img hidden min-w-screen md:inline-block"
+                src="https://source.unsplash.com/random/1441x601" alt="slider-img-3">
+            <!-- short imgs -->
+            <img class="slider-img md:hidden min-w-screen inline-block" class="border rounded-lg"
+                src="https://source.unsplash.com/random/1440x800" alt="slider-img-1">
+            <img class="slider-img md:hidden min-w-screen inline-block" class="border rounded-lg"
+                src="https://source.unsplash.com/random/1441x800" alt="slider-img-1">
+            <img class="slider-img md:hidden min-w-screen inline-block" class="border rounded-lg"
+                src="https://source.unsplash.com/random/1440x801" alt="slider-img-1">
+        </div>
+        </div>
+        <!-- cards -->
+        <h2 class="text-xl md:text-3xl text-cyan-700 font-bold text-center capitalize my-10">recommended courses</h2>
+        <section class="text-gray-900 px-10 pb-10">
+            <div
+                class="cardsholder  flex m-auto items-center space-y-8 flex-col max-w-[26rem] md:space-y-0 md:max-w-full md:flex-row md:justify-evenly">
+
+                <div class="card border flex flex-col bg-gray-200 sm:mx-5 overflow-hidden rounded-xl shadow-xl">
+                    <div>
+                        <img class="box-border rounded-xl w-full" src="https://source.unsplash.com/random/720x400" alt="logo-banner">
+                    </div>
+                    <div class="p-4 pr-7">
+                            <h1 class="text-lg pb-3 font-bold">Lorem ipsum dolor sit amet.</h1>
+                            <p class="text-gray-700 ">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui,
+                                aut. Quod illum
+                                voluptatum neque accusantium ratione pariatur ipsa vel maxime debitis, nihil magni
+                                voluptas distinctio,
+                                ullam ipsam consequatur repellat laborum.</p>
+                            <button
+                                class="bg-gray-800 capitalize font-semibold text-white px-2 py-2 mt-7 text-sm rounded-full hover:bg-gray-900 hover:text-cyan-400">start
+                                watching</button>
+                    </div>
+                </div>
+                <div class="card flex border flex-col sm:mx-5 bg-gray-200  overflow-hidden rounded-xl shadow-xl">
+                    <div>
+                        <img class="box-border rounded-xl w-full" src="https://source.unsplash.com/random/720x401" alt="logo-banner">
+                    </div>
+                    <div class="p-4 pr-7">
+                            <h1 class="text-lg pb-3 font-bold">Lorem ipsum dolor sit amet.</h1>
+                            <p class="text-gray-700">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui, aut.
+                                Quod illum
+                                voluptatum neque accusantium ratione pariatur ipsa vel maxime debitis, nihil magni
+                                voluptas distinctio,
+                                ullam ipsam consequatur repellat laborum.</p>
+                            <button
+                                class="bg-gray-800 capitalize font-semibold text-white px-2 py-2 mt-7 text-sm rounded-full hover:bg-gray-900 hover:text-cyan-400">start
+                                watching</button>
+                    </div>
+                </div>
+                <div class="card flex border flex-col sm:mx-5 bg-gray-200 overflow-hidden rounded-xl shadow-xl">
+                    <div>
+                        <img class="box-border rounded-xl w-full" src="https://source.unsplash.com/random/721x400" alt="logo-banner">
+                    </div>
+                    <div class="p-4 pr-7">
+                            <h1 class="text-lg pb-3 font-bold">Lorem ipsum dolor sit amet.</h1>
+                            <p class="text-gray-700">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Qui, aut.
+                                Quod illum
+                                voluptatum neque accusantium ratione pariatur ipsa vel maxime debitis, nihil magni
+                                voluptas distinctio,
+                                ullam ipsam consequatur repellat laborum.</p>
+                            <button
+                                class="bg-gray-800 capitalize font-semibold text-white px-2 py-2 mt-7 text-sm rounded-full hover:bg-gray-900 hover:text-cyan-400">start
+                                watching</button>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+        <button class="w-fit block m-auto my-7" ><a href="courses.html" class="bg-gray-800 capitalize  font-semibold text-white px-2 py-2  rounded hover:bg-gray-900 hover:text-cyan-400">watch more</a></button>
+        <!-- testimonials -->
+    <section class="text-gray-600 body-font px-10">
+        <div class="container px-5 pt-5 pb-10 mx-auto">
+          <h1 class="text-3xl md:text-3xl font-bold title-font text-cyan-700 mb-12 text-center">Testimonials</h1>
+          <div class="flex flex-wrap -m-4">
+            <div class="p-4 md:w-1/2 w-full">
+              <div class="h-full bg-gray-200 p-8 rounded">
+                <svg xmlns="" fill="currentColor" class="block w-5 h-5 text-gray-400 mb-4" viewBox="0 0 975.036 975.036">
+                  <path
+                    d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+                  </path>
+                </svg>
+                <p class="leading-relaxed mb-6">I don't have words to thank this man, I'm really grateful to have this
+                  channel and website in my daily routine. If you're a mere beginner, then you can trust this guy and can
+                  put your time into his content. I can assure you that it'll be worth it.</p>
+                <a class="inline-flex items-center">
+                  <img alt="testimonial" src="https://dummyimage.com/106x106"
+                    class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+                  <span class="flex-grow flex flex-col pl-4">
+                    <span class="title-font font-medium text-gray-900">Mohit Kumar</span>
+                    <span class="text-gray-500 text-sm capitalize">Web developer</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+            <div class="p-4 md:w-1/2 w-full">
+              <div class="h-full bg-gray-200 p-8 rounded">
+                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="block w-5 h-5 text-gray-400 mb-4"
+                  viewBox="0 0 975.036 975.036">
+                  <path
+                    d="M925.036 57.197h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.399 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l36 76c11.6 24.399 40.3 35.1 65.1 24.399 66.2-28.6 122.101-64.8 167.7-108.8 55.601-53.7 93.7-114.3 114.3-181.9 20.601-67.6 30.9-159.8 30.9-276.8v-239c0-27.599-22.401-50-50-50zM106.036 913.497c65.4-28.5 121-64.699 166.9-108.6 56.1-53.7 94.4-114.1 115-181.2 20.6-67.1 30.899-159.6 30.899-277.5v-239c0-27.6-22.399-50-50-50h-304c-27.6 0-50 22.4-50 50v304c0 27.601 22.4 50 50 50h145.5c-1.9 79.601-20.4 143.3-55.4 191.2-27.6 37.8-69.4 69.1-125.3 93.8-25.7 11.3-36.8 41.7-24.8 67.101l35.9 75.8c11.601 24.399 40.501 35.2 65.301 24.399z">
+                  </path>
+                </svg>
+                <p class="leading-relaxed mb-6">For everyone who wants to level up their #Coding and #Dev skills -
+                  seriously, this channel is for you! Both basic and advanced stacks are covered on this channel, and one
+                  can learn according to his skill levels. And the icing on the cake is, everything is available for free.
+                </p>
+                <a class="inline-flex items-center">
+                  <img alt="testimonial" src="https://dummyimage.com/107x107"
+                    class="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center">
+                  <span class="flex-grow flex flex-col pl-4">
+                    <span class="title-font font-medium text-gray-900">Rakesh Shetty</span>
+                    <span class="text-gray-500 text-sm capitalize">web developer</span>
+                  </span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    {% endblock %}
