@@ -4,6 +4,7 @@ from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import text
 from werkzeug.utils import secure_filename
 import base64
+import numpy as np
 
 # app
 app = Flask(__name__)
@@ -38,26 +39,61 @@ def landingpage():
 
 @app.route('/home')
 def home():
-    return render_template('home.html')
+    data = videos.query.all()
+    course_name_data = set({})
+    courselist_data = []
+    img_list =[]
+    for course_name in data:
+        course_name_data.add(course_name.course)
+    
+    for item in course_name_data:
+        getcourse= videos.query.filter_by(course = item).first()
+        courselist_data.append(getcourse)
+
+    for img in courselist_data:
+        imgdata = base64.b64encode(img.titleimg)
+        imgdata = imgdata.decode('UTF-8')
+        img_list.append(imgdata)
+    
+    return render_template('home.html',video = courselist_data,listimg = img_list)
 
 
 @app.route('/courses')
 def courseshow():
     data = videos.query.all()
-    
-    # img decoding
+    # iinitialize the courses 
+    course_name_data = set({})
+
+    # store the filter data
+    courselist_data = []
+
+    # image storing list
     img_list = []
-    for img in data:
+    
+    
+    # filter the data
+    for course_name in data:
+        course_name_data.add(course_name.course)
+
+
+    # short the courses
+    for item in course_name_data:
+        getcourse= videos.query.filter_by(course = item).first()
+        courselist_data.append(getcourse)
+
+
+    for img in courselist_data:
         imgdata = base64.b64encode(img.titleimg)
         imgdata = imgdata.decode('UTF-8')
         img_list.append(imgdata)
-    return render_template('courses.html',video = data,listimg = img_list)
+    
+    return render_template('courses.html',video = courselist_data,listimg = img_list)
 
-@app.route('/courses_video/<string:video_slug>', methods = ['POST'])
-def coursevideos(video_slug):
-    if request.method == 'POST' : 
-        course_video = videos.query.filter_by(slug = video_slug).first()
-    return render_template('videos.html')
+
+@app.route('/courses_video/<string:video_course>', methods = ['GET'])
+def coursevideos(video_course):
+    data = videos.query.filter_by(course = video_course).all()
+    return render_template('videos.html', video = data)
 
 
 @app.route('/about')
