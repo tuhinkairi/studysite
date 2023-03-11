@@ -1,4 +1,4 @@
-from flask import Flask,request, render_template
+from flask import Flask,request, render_template, send_file
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import text
@@ -89,12 +89,25 @@ def courseshow():
     
     return render_template('courses.html',video = courselist_data,listimg = img_list)
 
-
-@app.route('/courses_video/<string:video_course>', methods = ['GET'])
-def coursevideos(video_course):
+# video playlist
+@app.route('/courses/<string:video_course>')
+def video(video_course):
     data = videos.query.filter_by(course = video_course).all()
-    return render_template('videos.html', video = data)
+    viddata = base64.b64encode(data[0].video)
+    viddata = viddata.decode('UTF-8')
+    
+    return render_template('videos.html', video = data,show_video = viddata, video_play_data = data[0]) 
 
+
+@app.route('/courses/<string:video_course>/<string:video_slug>')
+def coursevideos(video_course,video_slug):
+    dataofvideo = videos.query.filter_by(slug = video_slug).first()
+    viddata = base64.b64encode(dataofvideo.video)
+    viddata = viddata.decode('UTF-8')
+    
+
+    data = videos.query.all()
+    return render_template('videos.html', video = data,show_video = viddata,video_play_data = dataofvideo) 
 
 @app.route('/about')
 def about():
@@ -146,7 +159,7 @@ def uploadvideos():
         slug_data = f'{coursename[0:15]}{last}{datetime.now()}' 
         # SET GLOBAL max_allowed_packet=1073741824;
         data_push = videos(title=title, video=video, course=coursename, date=datetime.now(), slug=slug_data, discription=dis,titleimg=thumbnail)
-                
+        db.session.execute(text('SET GLOBAL max_allowed_packet=1073741824;'))
         db.session.add(data_push)
         db.session.commit()
 
