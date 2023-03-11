@@ -141,8 +141,9 @@ def login():
     return render_template('login.html')
 
 
-@app.route('/upload',methods=['GET','POST'])
+@app.route('/dashboard',methods=['GET','POST'])
 def uploadvideos():
+    data = videos.query.all()
     if request.method == 'POST':
         title = request.files['vid_file'].filename
         video = request.files['vid_file'].read()
@@ -165,6 +166,30 @@ def uploadvideos():
 
         # reset id 
         db.session.execute(text('SET @num:=0;UPDATE videos SET sno=@num :=(@num +1); ALTER TABLE videos AUTO_INCREMENT = 1;'))
-    return render_template('upload.html')
+    return render_template('dashboard.html',data = data)
 
+# editing 
+@app.route('/edit/<string:video_sno>',methods=['GET','POST'])
+def edit(video_sno):
+    data = videos.query.filter_by(sno = int(video_sno)).first()
+    if request.method == 'POST':
+
+        # taking the form data
+        title = request.form.get('title')
+        discription = request.form.get('discription')
+        video_file = request.files['video'].read()
+        image_file = request.files['image'].read()
+
+        videos.title=title
+        videos.discription=discription
+        videos.video=video_file
+        videos.titleimg = image_file
+        db.session.commit()
+    return render_template('edit.html',data = data)
+@app.route('delete/<string:video_sno>', methods=['GET','POST'])
+def delete(video_sno):
+    if request.method=='POST':
+        data = videos.query.filter_by(sno = video_sno).first()
+        db.session.delete(data)
+        db.session.commit()
 app.run(debug=True)

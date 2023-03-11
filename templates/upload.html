@@ -6,8 +6,9 @@
     <link rel="stylesheet" href="{{url_for('static',filename = 'css/style.css') }}">
   </head>
   <body>
+
     <h1>File Upload Form</h1>
-    <form class="" action="/upload" method="post" enctype="multipart/form-data">
+    <form class="bg-gray-200  rounded-md px-5 py-5 flex flex-col justify-center items-center space-y-5" action="/dashboard" method="post" enctype="multipart/form-data">
 
     <label for="file">video </label>
     <input type="file" class="border" name="vid_file" id="file">
@@ -16,13 +17,13 @@
     <input type="file" class="border" name="thumbnail" id="thumbnail">
 
     <label for="course_name">Course Name</label>
-    <input type="text" class="border" name="course_name" id="course_name">
+    <input type="text w-full p-1 " class="border" name="course_name" id="course_name">
 
     <label for="dis">discription</label>
-    <input type="text" class="border" name="dis" id="dis">
+    <input type="text w-full p-1 " class="border" name="dis" id="dis">
 
     <br>
-    <input type="submit" class="border" name="submit" value="Upload">
+    <button type='submit' class="bg-gray-800 capitalize font-semibold block w-fit m-auto text-white px-2 py-2 mt-7 text-sm rounded-full hover:bg-gray-900 hover:text-cyan-400">upload</button>
     </form>
   </body>
 </html>
