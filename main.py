@@ -1,10 +1,8 @@
-from flask import Flask,request, render_template, send_file
+from flask import Flask,request, render_template, redirect
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy import text
-from werkzeug.utils import secure_filename
 import base64
-import numpy as np
 
 # app
 app = Flask(__name__)
@@ -106,7 +104,7 @@ def coursevideos(video_course,video_slug):
     viddata = viddata.decode('UTF-8')
     
 
-    data = videos.query.all()
+    data = videos.query.filter_by(course=video_course).all()
     return render_template('videos.html', video = data,show_video = viddata,video_play_data = dataofvideo) 
 
 @app.route('/about')
@@ -138,6 +136,7 @@ def account():
 
 @app.route('/login')
 def login():
+    
     return render_template('login.html')
 
 
@@ -166,6 +165,7 @@ def uploadvideos():
 
         # reset id 
         db.session.execute(text('SET @num:=0;UPDATE videos SET sno=@num :=(@num +1); ALTER TABLE videos AUTO_INCREMENT = 1;'))
+        return redirect('/dashboard')
     return render_template('dashboard.html',data = data)
 
 # editing 
@@ -175,16 +175,23 @@ def edit(video_sno):
     if request.method == 'POST':
 
         # taking the form data
+        
+        course_name = request.form.get('course_name')
         title = request.form.get('title')
-        discription = request.form.get('discription')
-        video_file = request.files['video'].read()
-        image_file = request.files['image'].read()
-
-        videos.title=title
-        videos.discription=discription
-        videos.video=video_file
-        videos.titleimg = image_file
+        discription = request.form.get('dis')
+        video_file = request.files['vid_file']
+        image_file = request.files['thumbnail']
+        
+        if video_file.filename != '':
+            data.video=video_file.read()
+        if image_file.filename != '':
+            data.titleimg = image_file.read()
+        data.title=title
+        data.course=course_name
+        data.discription=discription
+        db.session.execute(text('SET GLOBAL max_allowed_packet=1073741824;'))
         db.session.commit()
+        return redirect('/dashboard')
     return render_template('edit.html',data = data)
 
 @app.route('/delete/<string:video_sno>', methods=['GET','POST'])
@@ -194,4 +201,5 @@ def delete(video_sno):
         db.session.delete(data)
         db.session.commit()
         db.session.execute(text('SET @num :=0;UPDATE videos SET sno = @num := (@num+1);ALTER TABLE videos AUTO_INCREMENT = 1;'))
+    return redirect('/dashboard')
 app.run(debug=True)

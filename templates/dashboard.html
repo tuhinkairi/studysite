@@ -2,7 +2,7 @@
 {% block body %}
 <main class="postshow text-gray-900 lg:px-10 " style="scroll-behavior: smooth;">
     <!-- dashboard-->
-    <h1 class=" py-2 my-5 text-3xl capitalize text-center font-sm border-b-2 border-b-red-500 w-fit px-3 m-auto">
+    <h1 class=" text-xl md:text-3xl text-cyan-700 font-bold text-center capitalize my-10">
         welcome to dashboard</h1>
     <div id="dashboard-control" class="flex items-center justify-center space-x-7 w-fit m-auto"
         style="padding-top:.1rem; padding-bottom:1rem">
@@ -27,8 +27,8 @@
     <!-- showing allposts -->
     <section id='posttable' class="my-5" >
         
-        <h1 class="py-2 mt-5 text-3xl my-5 capitalize text-center font-sm border-b-2 border-b-cyan-500 w-fit px-3 m-auto">
-            My Posts</h1>
+        <h1 class="text-xl md:text-3xl text-cyan-700 font-bold text-center capitalize my-10">
+            My videos</h1>
         <div class="flex justify-center items-center" style=" overflow-y: auto;"  >
         <table class="table border inline-block" style="max-height:450px; overflow-y: auto"  >
             <thead class="thead-dark bg-gray-700 text-white">
@@ -52,7 +52,7 @@
                     <td scope="row"><a href="/edit/{{items.sno}}"><button type="submit" id="edit"
                         class="mx-auto text-white hover:text-cyan-400 bg-gray-700 border-0 py-1 px-1 m-auto focus:outline-none hover:bg-gray-800 rounded capitalize">edit
                         posts</button></a></td>
-                    <td scope="row" class="pr-2"><form action="/delete/{{ items.sno}}" method="post"><button type="submit" id="del-btn"
+                    <td scope="row" class="pr-2"><form action="/delete/{{ items.sno }}" method="post"><button type="submit" id="del-btn"
                         class="mx-auto text-white bg-gray-700 border-0 py-1 px-1 m-auto focus:outline-none hover:text-cyan-400 hover:bg-gray-800 rounded  capitalize">delete
                         posts</button></a></form>
                     </td>
@@ -84,7 +84,7 @@
             <textarea class="p-1 border" name="dis" cols="20" rows="10" id="dis" placeholder="content-here"></textarea>
         </div>
         <div class="p-2 box-border my-5 w-fit m-auto">
-            <button type="button" id="edit_showing"
+            <button type="submit" id="edit_showing"
             class="flex mx-auto text-white bg-gray-700 border-0 hover:text-cyan-400 font-semibold block  py-1 px-2 focus:outline-none hover:bg-gray-800 rounded  mr-2 capitalize" style="margin-right: 5px;">Upload</button>
         </div>
     </form>

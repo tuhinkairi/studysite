@@ -1,0 +1,71 @@
+{% extends 'layout.html' %}
+{% block body %}
+<main class="postshow text-gray-900 lg:px-10 " style="scroll-behavior: smooth;">
+    <!-- dashboard-->
+    <h2 class="text-xl md:text-3xl text-cyan-700 font-bold text-center capitalize my-10">edit</h2>
+
+    <div id="dashboard-control" class="flex items-center justify-center space-x-7 w-fit m-auto"
+        style="padding-top:.1rem; padding-bottom:1rem">
+        <!-- control btns -->
+        <span>
+            <a href="#upload">
+                <button type="button" id="upload_posts"
+            class="flex mx-auto text-white bg-gray-700 border-0 py-1 px-2 focus:outline-none hover:bg-gray-800 hover:text-cyan-400 rounded mr-2 capitalize ">upload posts
+        </button>
+    </a>
+        </span>
+        <span>
+            <button type="button" id="edit_showing"
+            class="flex mx-auto text-white bg-gray-700 hover:text-cyan-400 border-0 py-1 px-2 focus:outline-none hover:bg-gray-800 rounded  mr-2 capitalize" style="margin-right: 5px;">dashboard</button>
+        </span>
+        <form action="/logout" method="post" class="w-fit">
+            <button type="submit" id="Logout"
+                class="flex mx-auto text-white bg-gray-700 border-0 py-1 hover:text-cyan-400 px-2 focus:outline-none hover:bg-gray-800 rounded  capitalize">Logout</button>
+        </form>
+    </div>
+    
+    <!-- edit posts -->
+    <div id='edit' style="position:absolute; z-index:-1; top:880px"></div>
+    <form id="editform" action="/edit/{{ data.sno }}" method="post" enctype="multipart/form-data" style="max-width:600px;margin:auto;padding:0px 5px;"
+        >
+
+        <div class="flex flex-col my-5">
+
+            <label for=" title" class="font-semibold text-gray-700 capitalize text-md mt-2">title</label>
+    <input type="text " class="data border p-1 my-2" name="title" id="title" placeholder="Enter Title" value="{{ data.title }}">
+            <label for="course_name" class="font-semibold text-gray-700 capitalize text-md mt-2 data">Course Name</label>
+    <input type="text " class="data border p-1 my-2" name="course_name" id="course_name" placeholder="Enter course name" value="{{ data.course }}">
+            
+            <label for="file" class="font-semibold text-gray-700 capitalize text-md mt-2">video </label>
+            <input type="file" class="border p-1 my-2 " name="vid_file" id="file" >
+            
+            <label for="thumbnail" class="font-semibold text-gray-700 capitalize text-md mt-2">image</label>
+            <input type="file" class="p-1 my-2 border" name="thumbnail" id="thumbnail">
+
+            <label for="dis" class=" font-semibold text-gray-700 capitalize text-md my-2">discription</label>
+            <textarea class="data p-1 border " name="dis" cols="20" rows="10" id="dis" placeholder="content-here" >{{ data.discription }}</textarea>
+        </div>
+        <div class="p-2 box-border my-5 w-fit m-auto">
+            <button type="submit" id="edit_showing"
+            class="flex mx-auto text-white bg-gray-700 border-0 hover:text-cyan-400 font-semibold block  py-1 px-2 focus:outline-none hover:bg-gray-800 rounded  mr-2 capitalize" style="margin-right: 5px;">Upload</button>
+        </div>
+    </form>
+    <script>
+        const formdata = document.getElementsByClassName('data')
+        const eform = documnet.getElementById('editform')
+        eform.addEventListner(onsubmit,()=>{
+            Array.from(formdata).forEach((e)=>{
+                
+                if(e.value == ''){
+                    alert('please fill the empty field')
+                    
+                    return false
+
+                }
+    
+            })
+
+        })
+    </script>
+</main>
+{% endblock %}
