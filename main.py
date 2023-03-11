@@ -189,7 +189,8 @@ def edit(video_sno):
 @app.route('delete/<string:video_sno>', methods=['GET','POST'])
 def delete(video_sno):
     if request.method=='POST':
-        data = videos.query.filter_by(sno = video_sno).first()
+        data = videos.query.get_or_404(video_sno)
         db.session.delete(data)
         db.session.commit()
+        db.session.execute(text('SET @num :=0;UPDATE videos SET sno = @num := (@num+1);ALTER TABLE videos AUTO_INCREMENT = 1;'))
 app.run(debug=True)
