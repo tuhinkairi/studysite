@@ -186,7 +186,8 @@ def edit(video_sno):
         videos.titleimg = image_file
         db.session.commit()
     return render_template('edit.html',data = data)
-@app.route('delete/<string:video_sno>', methods=['GET','POST'])
+
+@app.route('/delete/<string:video_sno>', methods=['GET','POST'])
 def delete(video_sno):
     if request.method=='POST':
         data = videos.query.get_or_404(video_sno)
